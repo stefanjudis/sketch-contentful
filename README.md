@@ -21,5 +21,14 @@ To connect your layers with Contentful you have to:
 - all TextLayers inside of this group can now be connected to fields
 - include field itendifier in name of the Text layer `My title {fields:FIELD_NAME}` -> `My title {fields:title}`
 
+A the layers of a document could be as follows to make it work.
+
+```
+Author {entry:fjsdaklfsjf8239qr}         // a Group
+  |__ Title {fields:title}               // a TextLayer
+  |__ Description {fields:description}   // a TextLayer
+  |
+```
+
 Now your able to fetch the recent data from Contentful and populate the data.
 
