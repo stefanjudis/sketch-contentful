@@ -1,0 +1,28 @@
+{
+  "author" : "Stefan Judis",
+  "commands" : [
+    {
+      "name": "Open settings",
+      "identifier": "com.contentful.settings-contentful",
+      "script": "lib/settings.js",
+      "handler": "openSettings",
+      "isRoot" : false
+    },
+    {
+      "name": "Fetch data",
+      "identifier": "com.contentful.fetch-contentful",
+      "script": "lib/fetch.js",
+      "handler": "populateData",
+      "isRoot" : false
+    }
+  ],
+  "identifier" : "com.contentful.sketch-contentful-plugin",
+  "description": "Contentful for Sketch",
+  "authorEmail" : "stefanjudis@gmail.com",
+  "name" : "Contentful",
+  "version": "1.0.0",
+  "manifestURL": "",
+  "downloadURL": "",
+  "compatibleVersion": 41,
+  "bundleVersion": 1
+}

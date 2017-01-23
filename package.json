@@ -1,0 +1,29 @@
+{
+  "name": "sketch-contentful",
+  "version": "1.0.0",
+  "description": "A Sketch App plugin to populate your documents with data stored in Contentful.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanjudis/sketch-contentful.git"
+  },
+  "keywords": [
+    "sketch",
+    "plugin",
+    "contentful"
+  ],
+  "author": "stefan judis <stefanjudis@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stefanjudis/sketch-contentful/issues"
+  },
+  "homepage": "https://github.com/stefanjudis/sketch-contentful#readme",
+  "devDependencies": {
+    "raw-loader": "^0.5.1",
+    "webpack": "^2.2.0"
+  }
+}
