@@ -22,8 +22,5 @@
     "url": "https://github.com/stefanjudis/sketch-contentful/issues"
   },
   "homepage": "https://github.com/stefanjudis/sketch-contentful#readme",
-  "devDependencies": {
-    "raw-loader": "^0.5.1",
-    "webpack": "^2.2.0"
-  }
+  "devDependencies": {}
 }
