@@ -29,5 +29,5 @@ Author {entry:fjsdaklfsjf8239qr}         // a Group
   |__ Description {fields:description}   // a TextLayer
 ```
 
-Now your able to fetch the recent data from Contentful and populate the data.
+Now you're able to fetch the recent data from Contentful and populate the data. To do so go to **Plugins**, **Contentful**, **Fetch data**.
 
