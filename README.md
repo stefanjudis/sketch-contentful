@@ -10,7 +10,7 @@ That's it. Now it's installed. :)
 
 ## Define space and CDA token
 
-To access data from Contentful you have to define the particular space where the data is stored and the depending CDA token so that the requests can be authorized.
+To access data from Contentful you have to define the particular space where the data is stored and the depending CDA token so that the requests can be authorized. To do so go to **Plugins** -> **Contentful** -> **Open Settings**.
 
 ## Connect TextLayers to Contentful
 
@@ -29,5 +29,5 @@ Author {entry:fjsdaklfsjf8239qr}         // a Group
   |__ Description {fields:description}   // a TextLayer
 ```
 
-Now you're able to fetch the recent data from Contentful and populate the data. To do so go to **Plugins**, **Contentful**, **Fetch data**.
+Now you're able to fetch the recent data from Contentful and populate the data. To do so go to **Plugins** -> **Contentful** -> **Fetch data**.
 
