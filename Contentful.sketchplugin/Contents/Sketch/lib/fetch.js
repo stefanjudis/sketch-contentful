@@ -16,7 +16,7 @@ function populateData( context ) {
     var connectedEntry = kid.name().match( /{entry:(.+?)}/ );
 
     if ( connectedEntry ) {
-      var data = fetchJSON( 'https://cdn.contentful.com/spasces/f20lfrunubsq/entries?access_token=0f72dc3f46a2fd76a80145a476ef0f9daf5adce19462787499c1b0f4f2d1c98e&sys.id=' + connectedEntry[ 1 ] ).items[ 0 ];
+      var data = fetchJSON( 'https://cdn.contentful.com/spaces/f20lfrunubsq/entries?access_token=0f72dc3f46a2fd76a80145a476ef0f9daf5adce19462787499c1b0f4f2d1c98e&sys.id=' + connectedEntry[ 1 ] ).items[ 0 ];
 
       log( data );
 
