@@ -20,8 +20,6 @@ function initContext(context) {
     plugin = context.plugin;
     command = context.command;
     page = doc.currentPage();
-    // artboard = page.currentArtboard(),
-    // selection = context.selection
 }
 
 //--------------------------------------//
@@ -30,16 +28,16 @@ function initContext(context) {
 
 var getSize = {
     width : function(layer) {
-        return layer.frame().width()
+      return layer.frame().width()
     },
     widthProportion : function(layer) {
-        return layer.frame().width()/layer.parentGroup().frame().width()
+      return layer.frame().width()/layer.parentGroup().frame().width()
     },
     height : function(layer) {
-        return layer.frame().height()
+      return layer.frame().height()
     },
     heightProportion : function(layer) {
-        return layer.frame().height()/layer.parentGroup().frame().height()
+      return layer.frame().height()/layer.parentGroup().frame().height()
     },
 }
 
@@ -77,7 +75,7 @@ function createWindow( values ) {
     var spaceIdTextfield = NSTextField.alloc().initWithFrame( NSMakeRect( 0, 95, freeSpace, 25 ) );
     spaceIdTextfield.setStringValue( values.spaceId || '' );
 
-    var cdaTokenLabel = createLabel( 'CDA Token', 12, true, NSMakeRect( 0, 60, freeSpace, 20 ) );
+    var cdaTokenLabel = createLabel( 'Content Delivery API Token', 12, true, NSMakeRect( 0, 60, freeSpace, 20 ) );
     var cdaTokenTextfield = NSTextField.alloc().initWithFrame( NSMakeRect( 0, 35, freeSpace, 25 ) );
     cdaTokenTextfield.setStringValue( values.cdaToken || '' );
 
