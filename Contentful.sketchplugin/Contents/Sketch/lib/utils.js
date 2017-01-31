@@ -3,8 +3,6 @@
 //               Context                //
 //--------------------------------------//
 
-var app = NSApplication.sharedApplication();
-var selection;
 var plugin;
 var command;
 var doc;
