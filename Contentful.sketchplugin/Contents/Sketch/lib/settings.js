@@ -3,7 +3,7 @@
 function openSettings( context ) {
   initContext( context );
 
-  var window = createWindow( {
+  var window = createSettingsWindow( {
     spaceId : command.valueForKey_onDocument_forPluginIdentifier(
       'spaceId',
       docData,
@@ -18,7 +18,6 @@ function openSettings( context ) {
 
   var alert = window[ 0 ];
   var inputs = window[ 1 ];
-
   var response = alert.runModal();
 
   // save button was pressed

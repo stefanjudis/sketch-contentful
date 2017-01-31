@@ -3,16 +3,14 @@
 //               Context                //
 //--------------------------------------//
 
-var app = NSApplication.sharedApplication(),
-    selection,
-    plugin,
-    command,
-    doc,
-    docData,
-    page,
-    artboard,
-    resourcesPath = "constraints@2x.png",
-    constraintsKey = "@constraints"
+var app = NSApplication.sharedApplication();
+var selection;
+var plugin;
+var command;
+var doc;
+var docData;
+var page;
+var artboard;
 
 function initContext(context) {
     doc = context.document;
@@ -57,12 +55,22 @@ function createLabel(text, fontSize, bold, frame) {
     return label
 }
 
+function createLogBox(errors, fontSize, frame) {
+    var logContainer = NSTextView.alloc().initWithFrame( frame );
+    var errorMsgs = errors.join( '\n\n' );
 
-function createWindow( values ) {
+    logContainer.setEditable(true);
+    logContainer.setSelectable(true);
+    logContainer.string = errorMsgs;
+
+    return logContainer;
+}
+
+
+function createSettingsWindow( values ) {
     var alert = COSAlertWindow.new()
     var width = 400;
     var freeSpace = width - 100;
-
 
     alert.addButtonWithTitle( 'Save' );
     alert.addButtonWithTitle( 'Cancel' );
@@ -89,4 +97,23 @@ function createWindow( values ) {
 
     var inputs = [ spaceIdTextfield, cdaTokenTextfield ];
     return [ alert, inputs ];
+}
+
+function createErrorReportWindow( errors ) {
+    var report = COSAlertWindow.new()
+    var width = 400;
+    var freeSpace = width - 100;
+
+    report.addButtonWithTitle( 'Ok' );
+    report.setMessageText( 'There have been errors' );
+    report.setInformativeText( 'Please check the error log to see what went wrong:' );
+    report.setIcon( NSImage.alloc().initByReferencingFile( plugin.urlForResourceNamed( 'icon@2x.png' ).path() ) );
+
+    var mainView = NSView.alloc().initWithFrame( NSMakeRect( 0, 0, width, 250 ) );
+    var logBox = createLogBox( errors, 12, NSMakeRect( 0, 0, freeSpace, 250 ) );
+
+    mainView.addSubview( logBox );
+    report.addAccessoryView( mainView );
+
+    return report;
 }

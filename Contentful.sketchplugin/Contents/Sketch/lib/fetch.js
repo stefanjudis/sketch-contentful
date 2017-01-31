@@ -6,10 +6,9 @@
  */
 function populateData( context ) {
   initContext( context );
-  var counts = {
-    successful : 0,
-    failed     : 0
-  };
+
+  layersSuccessfulFilled = 0;
+  errors = [];
 
   var spaceId = command.valueForKey_onDocument_forPluginIdentifier(
     'spaceId',
@@ -44,11 +43,19 @@ function populateData( context ) {
         if ( connectedField ) {
           if ( /^<MSTextLayer:/.test( layer.toString() ) ) {
             if ( data.fields[ connectedField[ 1 ] ] ) {
-              layer.setStringValue( data.fields[ connectedField[ 1 ] ] );
+              if ( typeof data.fields[ connectedField[ 1 ] ] === 'string' ) {
+                layer.setStringValue( data.fields[ connectedField[ 1 ] ] );
 
-              counts.successful++;
+                layersSuccessfulFilled++;
+              } else {
+                errors.push(
+                  '`' + connectedField[ 1 ] + '` in entry `' + connectedEntry[ 1 ] + '` is not a string value'
+                );
+              }
             } else {
-              counts.failed++;
+              errors.push(
+                'Could not find `' + connectedField[ 1 ] + '` in data for `' + connectedEntry[ 1 ] + '`'
+              );
             }
           }
         }
@@ -56,9 +63,13 @@ function populateData( context ) {
     }
   } );
 
-  context.api().message(
-    counts.successful + ' layer(s) populated. ' + counts.failed + ' layer(s) failed.'
-  );
+  if ( errors.length ) {
+    createErrorReportWindow( errors ).runModal();
+  } else {
+    context.api().message(
+      layersSuccessfulFilled + ' layer(s) populated.'
+    );
+  }
 }
 
 
