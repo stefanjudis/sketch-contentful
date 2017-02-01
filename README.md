@@ -24,9 +24,9 @@ To connect your layers with Contentful you have to:
 A the layers of a document could be as follows to make it work.
 
 ```
-Author {entry:fjsdaklfsjf8239qr}         // a Group
-  |__ Title {fields:title}               // a TextLayer
-  |__ Description {fields:description}   // a TextLayer
+Author ${entry:fjsdaklfsjf8239qr}         // a Group
+  |__ Title ${fields:title}               // a TextLayer
+  |__ Description ${fields:description}   // a TextLayer
 ```
 
 Now you're able to fetch the recent data from Contentful and populate the data. To do so go to **Plugins** -> **Contentful** -> **Fetch data**.
