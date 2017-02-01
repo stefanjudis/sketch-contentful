@@ -23,7 +23,6 @@ function populateData( context ) {
   );
 
   if ( spaceId.trim() == '' || cdaToken.trim() == '' ) {
-    log( 'in it' );
     return context.api().message(
       'Please define Space Id and Content Delivery API token in the settings'
     );
