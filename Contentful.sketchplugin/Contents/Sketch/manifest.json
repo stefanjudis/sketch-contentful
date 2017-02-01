@@ -6,6 +6,7 @@
       "identifier": "com.contentful.settings-contentful",
       "script": "lib/settings.js",
       "handler": "openSettings",
+      "shortcut" : "cmd shift ,",
       "isRoot" : false
     },
     {
@@ -13,6 +14,7 @@
       "identifier": "com.contentful.fetch-contentful",
       "script": "lib/fetch.js",
       "handler": "populateData",
+      "shortcut" : "cmd shift f",
       "isRoot" : false
     }
   ],
